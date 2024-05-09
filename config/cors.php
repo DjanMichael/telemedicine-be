@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['telemed-api.dohcaraga.org'],
 
     'allowed_origins_patterns' => [],
 
