@@ -20,7 +20,7 @@ class AmazonChimeService
         $payloadAttendee = $payload['Attendee'];
 
         $dataMeetingSession['meeting_id'] = $payloadMeeting['ExternalMeetingId'];
-        $dataMeetingSession['user'] = $payload['user'];
+        $dataMeetingSession['user'] = $payload['user'] ?? "test";
         $dataMeetingSession['meeting_id_amazon'] = $payloadMeeting['MeetingId'];
         $dataMeetingSession['meeting_payload_raw'] = json_encode($payloadMeeting);
         $dataMeetingSession['attendee_payload_raw'] = json_encode($payloadAttendee);
