@@ -62,7 +62,7 @@ class AmazonChimeService
 
     public function findMeetingSessionById($meetingId)
     {
-        if(!$res = $this->meetingSession->where('meeting_id' ,$meetingId )->first())
+        if($res = $this->meetingSession->where('meeting_id' ,$meetingId )->first())
         {
             return response()->json(['data' => $res],200);
         }
