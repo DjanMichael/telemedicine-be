@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('meeting_sessions', function (Blueprint $table) {
             $table->id();
+            $table->string('user');
             $table->string('meeting_id');
             $table->string('meeting_id_amazon');
             $table->json('meeting_payload_raw');
