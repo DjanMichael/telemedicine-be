@@ -24,6 +24,6 @@ class AmazonChimeController extends Controller
 
     public function findMeetingSessionById(Request $request)
     {
-        return $this->amazonService->findMeetingSessionById($request->meetingId);
+        return $this->amazonService->findMeetingSessionById($request->meetingId,$request->user);
     }
 }
