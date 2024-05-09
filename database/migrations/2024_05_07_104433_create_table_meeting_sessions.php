@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('meeting_sessions', function (Blueprint $table) {
             $table->id();
             $table->string('meeting_id');
+            $table->string('meeting_id_amazon');
             $table->json('meeting_payload_raw');
             $table->json('attendee_payload_raw');
             $table->timestamps();
