@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('meetings', function (Blueprint $table) {
             $table->id();
             $table->string('meeting_id');
+            $table->string('meeting_id_amazon');
+            $table->json('meeting_payload_raw');
             $table->string('title');
             $table->string('meeting_password');
             $table->string('invitees');

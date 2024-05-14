@@ -19,5 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
-Route::post('/create-meeting',[AmazonChimeController::class,'createMeeting']);
-Route::post('/find-meeting',[AmazonChimeController::class,'findMeetingSessionById']);
+Route::post('/create-meeting',[AmazonChimeController::class,'createMeetingWithAttendee']);
+Route::post('/find-meeting',[AmazonChimeController::class,'findMeetingById']);
+Route::post('/find-attendee-meeting',[AmazonChimeController::class,'findAttendeeMeetingById']);
+Route::post('/create-attendee-meeting',[AmazonChimeController::class,'createAttendeInDB']);

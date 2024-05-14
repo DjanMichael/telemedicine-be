@@ -17,13 +17,23 @@ class AmazonChimeController extends Controller
         $this->amazonService = new AmazonChimeService;
     }
     //
-    public function createMeeting(CreateMeetingRequest $payload)
+    public function createMeetingWithAttendee(CreateMeetingRequest $payload)
     {
-       return $this->amazonService->createMeeting($payload->all());
+       return $this->amazonService->createMeetingWithAttendee($payload->all());
     }
 
-    public function findMeetingSessionById(Request $request)
+    public function findMeetingById(Request $request)
     {
-        return $this->amazonService->findMeetingSessionById($request->meetingId,$request->user);
+        return $this->amazonService->findMeetingById($request->meetingId);
+    }
+
+    public function findAttendeeMeetingById(Request $request)
+    {
+        return $this->amazonService->findAttendeeMeetingById($request->meetingId,$request->user);
+    }
+
+    public function createAttendeInDB(Request $request)
+    {
+        return $this->amazonService->createAttendeInDB($request->all());
     }
 }
