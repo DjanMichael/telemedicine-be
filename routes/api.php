@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AmazonChimeController;
+use App\Http\Controllers\AuthenticationController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,6 +15,17 @@ use App\Http\Controllers\AmazonChimeController;
 |
 */
 
+// authentication routes
+
+Route::group(['prefix'=>'auth'],function(){
+    Route::post('/login',[AuthenticationController::class, 'login']);
+    Route::post('/register-user',[AuthenticationController::class, 'registerUser']);
+    Route::post('/refresh-token',[AuthenticationController::class, 'refreshAccessToken']);
+});
+
+
+
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
@@ -23,3 +35,6 @@ Route::post('/create-meeting',[AmazonChimeController::class,'createMeetingWithAt
 Route::post('/find-meeting',[AmazonChimeController::class,'findMeetingById']);
 Route::post('/find-attendee-meeting',[AmazonChimeController::class,'findAttendeeMeetingById']);
 Route::post('/create-attendee-meeting',[AmazonChimeController::class,'createAttendeInDB']);
+
+
+
