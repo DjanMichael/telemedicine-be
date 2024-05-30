@@ -18,7 +18,7 @@ use App\Http\Controllers\AuthenticationController;
 // authentication routes
 
 Route::group(['prefix'=>'auth'],function(){
-    Route::post('/login',[AuthenticationController::class, 'login']);
+    Route::post('/login-user',[AuthenticationController::class, 'login']);
     Route::post('/register-user',[AuthenticationController::class, 'registerUser']);
     Route::post('/refresh-token',[AuthenticationController::class, 'refreshAccessToken']);
 });
